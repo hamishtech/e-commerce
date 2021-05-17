@@ -1,8 +1,10 @@
-import { createMuiTheme, ThemeProvider } from '@material-ui/core';
+import { createMuiTheme, Grid, ThemeProvider } from '@material-ui/core';
 import { purple } from '@material-ui/core/colors';
 import React from 'react';
-import Layout from './components/Layout/index';
-import NavBar from './components/Layout/NavBar';
+import Footer from './components/Layout/Footer';
+import NavBar from './components/Layout/Header';
+import HomePageMain from './pages/PrimaryHomePage';
+import HomePageSecondary from './pages/SecondaryHomePage';
 
 const theme = createMuiTheme({
   palette: {
@@ -10,21 +12,18 @@ const theme = createMuiTheme({
       main: purple[500],
     },
     secondary: {
-      // This is green.A700 as hex.
       main: '#11cb5f',
     },
-  },
-  typography: {
-    fontFamily: 'Oxygen',
   },
 });
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Layout>
-        <div>hello</div>{' '}
-      </Layout>
+      <NavBar />
+      <HomePageMain />
+      <HomePageSecondary />
+      {/* <Footer /> */}
     </ThemeProvider>
   );
 }

@@ -8,6 +8,7 @@ import React from 'react';
 import { Copyright } from './Copyright';
 
 const useStyles = makeStyles((theme) => ({
+  footerStyle: { fontSize: '12px' },
   footer: {
     borderTop: `1px solid ${theme.palette.divider}`,
     marginTop: theme.spacing(8),
@@ -54,18 +55,23 @@ const Footer = () => {
   const classes = useStyles();
 
   return (
-    <div>
+    <div style={{ backgroundColor: '#d1c4e9' }}>
       <Container maxWidth='md' component='footer' className={classes.footer}>
         <Grid container spacing={4} justify='space-evenly'>
           {footers.map((footer) => (
             <Grid item xs={6} sm={3} key={footer.title}>
-              <Typography variant='h6' color='textPrimary' gutterBottom>
+              <Typography variant='inherit' color='textPrimary' gutterBottom>
                 {footer.title}
               </Typography>
               <ul>
                 {footer.description.map((item) => (
-                  <li key={item}>
-                    <Link href='#' variant='subtitle1' color='textSecondary'>
+                  <li key={item} style={{ marginTop: '10px' }}>
+                    <Link
+                      href='#'
+                      variant='subtitle1'
+                      color='textSecondary'
+                      className={classes.footerStyle}
+                    >
                       {item}
                     </Link>
                   </li>

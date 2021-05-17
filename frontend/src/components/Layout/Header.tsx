@@ -4,9 +4,12 @@ import {
   makeStyles,
   Typography,
   Toolbar,
+  IconButton,
 } from '@material-ui/core';
+import SortIcon from '@material-ui/icons/Sort';
 import AppBar from '@material-ui/core/AppBar';
 import React from 'react';
+import { indigo, purple } from '@material-ui/core/colors';
 
 const useStyles = makeStyles((theme) => ({
   '@global': {
@@ -18,16 +21,26 @@ const useStyles = makeStyles((theme) => ({
   },
   appBar: {
     borderBottom: `1px solid ${theme.palette.divider}`,
+    background: 'none',
   },
   toolbar: {
-    flexWrap: 'wrap',
+    width: '75%',
+    margin: '0 auto',
   },
   toolbarTitle: {
     flexGrow: 1,
+    fontFamily: 'Nunito',
+    fontSize: '35px',
+    fontWeight: 900,
   },
   link: {
     margin: theme.spacing(1, 1.5),
+    fontFamily: 'Nunito',
+    fontWeight: 500,
+    fontSize: '14px',
   },
+  icon: { fontSize: '70px' },
+  colorTitle: { color: purple[600] },
 }));
 
 const NavBar = () => {
@@ -47,7 +60,7 @@ const NavBar = () => {
             noWrap
             className={classes.toolbarTitle}
           >
-            H-Resume{' '}
+            my<span className={classes.colorTitle}>Resume.</span>{' '}
           </Typography>
           <nav>
             <Link
@@ -75,15 +88,6 @@ const NavBar = () => {
               Pricing
             </Link>
           </nav>
-          <Button
-            href='#'
-            size="small"
-            color='primary'
-            variant='contained'
-            className={classes.link}
-          >
-            Get Started
-          </Button>
         </Toolbar>
       </AppBar>
     </div>
