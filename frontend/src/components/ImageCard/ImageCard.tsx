@@ -23,7 +23,7 @@ const useStyles = makeStyles({
     height: 300,
     paddingLeft: '70px',
   },
-  title: { fontFamily: 'Nunito', fontWeight: 900, color: purple[400] },
+  title: { fontFamily: 'Nunito', fontWeight: 600, color: purple[400] },
   description: { fontFamily: 'Nunito', fontWeight: 400 },
 });
 
@@ -54,10 +54,26 @@ export default function MediaCard({ picture, title, description }: Props) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size='small' color='primary'>
+        <Button
+          size='small'
+          color='primary'
+          style={{
+            fontFamily: 'Nunito',
+            fontWeight: 400,
+            color: purple[500],
+          }}
+        >
           Share
         </Button>
-        <Button size='small' color='primary'>
+        <Button
+          size='small'
+          color='primary'
+          style={{
+            fontFamily: 'Nunito',
+            fontWeight: 400,
+            color: purple[500],
+          }}
+        >
           Learn More
         </Button>
       </CardActions>

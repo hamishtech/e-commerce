@@ -1,22 +1,25 @@
 import {
-  Button,
-  Collapse,
-  Grid,
-  IconButton,
-  makeStyles,
-  Typography,
+    Button,
+    Collapse,
+    Grid,
+    IconButton,
+    makeStyles,
+    Typography
 } from '@material-ui/core';
 import { purple } from '@material-ui/core/colors';
 import { ExpandMore } from '@material-ui/icons';
 import React, { useEffect, useState } from 'react';
 import { Link as AutoScroll } from 'react-scroll';
-import LandingSVG from '../components/svg/LandingSVG';
+import LandingSVG from '../svg/LandingSVG';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
-    height: '100vh',
+    minHeight: '100vh',
+    [theme.breakpoints.down('md')]: {
+      height: '100vh',
+    },
   },
   titleContainer: {
     alignItems: 'center',
@@ -28,9 +31,16 @@ const useStyles = makeStyles({
   pageTitle: { fontFamily: 'Nunito', fontWeight: 900, marginBottom: 20 },
   pageTitle2: { fontFamily: 'Nunito', fontWeight: 400, paddingTop: 20 },
   colorTitle: { color: purple[600] },
-  goDown: { color: purple[600], fontSize: '3rem', marginTop: '-50px' },
+  goDown: {
+    color: purple[600],
+    fontSize: '3rem',
+    marginTop: '-50px',
+    [theme.breakpoints.down('sm')]: {
+      visibility: 'hidden',
+    },
+  },
   btn: { marginTop: 25 },
-});
+}));
 
 const HomePageMain = () => {
   const classes = useStyles();
@@ -42,7 +52,7 @@ const HomePageMain = () => {
 
   return (
     <div className={classes.root}>
-      <div style={{ height: '70px' }}></div>
+      <div style={{ height: '8rem' }}></div>
       <Collapse
         in={checked}
         {...(checked ? { timeout: 1000 } : {})}

@@ -1,18 +1,31 @@
-import { Grid, makeStyles } from '@material-ui/core';
+import { Grid, makeStyles, Typography } from '@material-ui/core';
+import { purple } from '@material-ui/core/colors';
 import React from 'react';
-import ImageCard from '../components/ImageCard/ImageCard';
-import SecondaryPic1 from '../components/svg/SecondaryPic1';
-import SecondaryPic2 from '../components/svg/SecondaryPic2';
+import Footer from '../../components/Layout/Footer';
+import ImageCard from '../ImageCard/ImageCard';
+import SecondaryPic1 from '../svg/SecondaryPic1';
+import SecondaryPic2 from '../svg/SecondaryPic2';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    height: '100vh',
+    borderTop: `1px solid ${theme.palette.divider}`,
+    paddingTop: '50px',
+    minHeight: '100vh',
     justifyContent: 'center',
+    [theme.breakpoints.down('lg')]: {
+      marginTop: '50px',
+      height: '80vh',
+      marginBottom: '100px',
+    },
     [theme.breakpoints.down('md')]: {
-      marginTop: '-50px',
+      marginTop: '50px',
+      height: '80vh',
+      marginBottom: '200px',
     },
     [theme.breakpoints.down('xs')]: {
-      marginTop: '250px',
+      height: '100vh',
+      marginTop: '300px',
+      marginBottom: '200px',
     },
   },
 }));
@@ -23,6 +36,20 @@ const HomePageSecondary = () => {
   return (
     <div id='secondary' className={classes.root}>
       <Grid container justify='center' spacing={5}>
+        <Grid item xs={12}>
+          {' '}
+          <Typography
+            variant='h2'
+            style={{
+              fontFamily: 'Nunito',
+              color: purple[500],
+              fontWeight: 900,
+              textAlign: 'center',
+            }}
+          >
+            Key Features
+          </Typography>
+        </Grid>
         <Grid item alignContent='center' alignItems='center'>
           <ImageCard
             picture={<SecondaryPic2 />}
@@ -38,6 +65,7 @@ const HomePageSecondary = () => {
           />
         </Grid>
       </Grid>
+      <Footer />
     </div>
   );
 };

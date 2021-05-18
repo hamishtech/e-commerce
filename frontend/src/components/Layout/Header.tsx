@@ -1,15 +1,13 @@
 import {
-  Button,
+  IconButton,
   Link,
   makeStyles,
-  Typography,
   Toolbar,
-  IconButton,
+  Typography,
 } from '@material-ui/core';
-import SortIcon from '@material-ui/icons/Sort';
 import AppBar from '@material-ui/core/AppBar';
+import { purple } from '@material-ui/core/colors';
 import React from 'react';
-import { indigo, purple } from '@material-ui/core/colors';
 
 const useStyles = makeStyles((theme) => ({
   '@global': {
@@ -21,23 +19,21 @@ const useStyles = makeStyles((theme) => ({
   },
   appBar: {
     borderBottom: `1px solid ${theme.palette.divider}`,
-    background: 'none',
+    background: '#fff',
+    position: 'fixed',
   },
   toolbar: {
     width: '75%',
-    margin: '0 auto',
   },
   toolbarTitle: {
     flexGrow: 1,
-    fontFamily: 'Nunito',
     fontSize: '35px',
     fontWeight: 900,
   },
   link: {
     margin: theme.spacing(1, 1.5),
-    fontFamily: 'Nunito',
-    fontWeight: 500,
-    fontSize: '14px',
+    fontWeight: 600,
+    fontSize: '17px',
   },
   icon: { fontSize: '70px' },
   colorTitle: { color: purple[600] },
@@ -48,41 +44,48 @@ const NavBar = () => {
   return (
     <div>
       <AppBar
-        position='static'
+        position='sticky'
         color='default'
         elevation={0}
         className={classes.appBar}
       >
         <Toolbar variant='dense' className={classes.toolbar}>
-          <Typography
-            variant='h6'
-            color='inherit'
-            noWrap
-            className={classes.toolbarTitle}
-          >
-            my<span className={classes.colorTitle}>Resume.</span>{' '}
-          </Typography>
+          <IconButton className={classes.toolbarTitle} href='/'>
+            {' '}
+            <Typography
+              variant='h6'
+              color='inherit'
+              noWrap
+              style={{
+                fontSize: '2rem',
+                fontFamily: 'Nunito',
+                fontWeight: 900,
+              }}
+            >
+              my<span className={classes.colorTitle}>Resume.</span>{' '}
+            </Typography>
+          </IconButton>
           <nav>
             <Link
               variant='button'
               color='textPrimary'
-              href='#'
+              href='/whyus'
               className={classes.link}
             >
-              Why H-Resume?
+              FEATURES{' '}
             </Link>
             <Link
               variant='button'
               color='textPrimary'
-              href='#'
+              href='/preview'
               className={classes.link}
             >
-              Features
+              Preview
             </Link>
             <Link
               variant='button'
               color='textPrimary'
-              href='#'
+              href='/pricing'
               className={classes.link}
             >
               Pricing
