@@ -52,6 +52,7 @@ function App() {
           </Route>
         </Switch>
       </Router>
+      <Footer />
     </ThemeProvider>
   );
 }

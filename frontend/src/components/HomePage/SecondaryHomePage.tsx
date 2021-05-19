@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('lg')]: {
       marginTop: '50px',
       height: '80vh',
-      marginBottom: '100px',
+      marginBottom: '0px',
     },
     [theme.breakpoints.down('md')]: {
       marginTop: '50px',
@@ -65,7 +65,6 @@ const HomePageSecondary = () => {
           />
         </Grid>
       </Grid>
-      <Footer />
     </div>
   );
 };

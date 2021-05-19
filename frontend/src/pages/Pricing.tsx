@@ -108,8 +108,8 @@ export default function Pricing() {
               fontWeight: 900,
               color: purple[500],
             }}
-            component='h1'
-            variant='h2'
+            component='h2'
+            variant='h3'
             align='center'
             color='textPrimary'
             gutterBottom
@@ -118,7 +118,7 @@ export default function Pricing() {
           </Typography>
           <Typography
             style={{ fontFamily: 'Nunito', fontWeight: 600 }}
-            variant='h5'
+            variant='h6'
             align='center'
             color='textSecondary'
             component='p'
@@ -158,9 +158,8 @@ export default function Pricing() {
                     <div className={classes.cardPricing}>
                       <Typography
                         component='h2'
-                        variant='h3'
+                        variant='h4'
                         color='textPrimary'
-                        style={{ fontFamily: 'Nunito' }}
                       >
                         ${tier.price}
                       </Typography>
@@ -197,7 +196,6 @@ export default function Pricing() {
             ))}
           </Grid>
         </Container>
-        <Footer />
       </div>
     </React.Fragment>
   );

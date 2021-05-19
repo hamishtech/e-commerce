@@ -90,15 +90,15 @@ const WhyUs = () => {
         </div>
         <Button
           style={{ marginTop: '100px' }}
+          href='/preview'
           variant='contained'
           size='large'
           color='primary'
           endIcon={<Icon>send</Icon>}
         >
-          Preview Resume Templates{' '}
+          Preview Templates{' '}
         </Button>
       </Container>
-      <Footer />
     </>
   );
 };
