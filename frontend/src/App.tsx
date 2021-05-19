@@ -10,6 +10,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Homepage from './pages/Homepage';
 import WhyUs from './pages/WhyUs';
 import Preview from './pages/Preview';
+import Payment from './pages/Checkout';
 
 const theme = createMuiTheme({
   breakpoints: {
@@ -51,6 +52,9 @@ function App() {
             <Preview />
           </Route>
         </Switch>
+        <Route path='/payment'>
+          <Payment />
+        </Route>
       </Router>
       <Footer />
     </ThemeProvider>

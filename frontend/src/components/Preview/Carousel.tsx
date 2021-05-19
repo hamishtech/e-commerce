@@ -76,6 +76,7 @@ export default function TemplateCarousel() {
                   variant='contained'
                   color='primary'
                   startIcon={<ShoppingCartIcon></ShoppingCartIcon>}
+                  href='/payment'
                 >
                   Purchase
                 </Button>

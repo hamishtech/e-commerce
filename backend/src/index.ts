@@ -1,14 +1,15 @@
 import express from 'express';
 import http from 'http';
+import { router as paymentRouter } from './routes/payment';
 
 const app = express();
-
-console.log('donkey kong');
 
 app.get('/', (_req, res) => {
   res.send('hello');
 });
 
-http.createServer(app).listen(3000, () => {
-  console.log('running app on');
+app.use('/payment', paymentRouter);
+
+http.createServer(app).listen(8080, () => {
+  console.log('running app on 8080');
 });

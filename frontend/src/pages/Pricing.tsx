@@ -14,7 +14,7 @@ import React from 'react';
 import Footer from '../components/Layout/Footer';
 
 const useStyles = makeStyles((theme) => ({
-  '@global': {
+  '@global': {  
     ul: {
       margin: 0,
       padding: 0,
