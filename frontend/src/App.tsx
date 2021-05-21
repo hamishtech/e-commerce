@@ -11,6 +11,8 @@ import Homepage from './pages/Homepage';
 import WhyUs from './pages/WhyUs';
 import Preview from './pages/Preview';
 import Payment from './pages/Checkout';
+import Success from './pages/Success';
+import FailPayment from './pages/FailPayment';
 
 const theme = createMuiTheme({
   breakpoints: {
@@ -51,9 +53,15 @@ function App() {
           <Route path='/preview'>
             <Preview />
           </Route>
+          <Route path='/success'>
+            <Success />
+          </Route>
         </Switch>
         <Route path='/payment'>
           <Payment />
+        </Route>
+        <Route path='/cancel'>
+          <FailPayment />
         </Route>
       </Router>
       <Footer />

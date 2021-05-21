@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
-// Make sure to call `loadStripe` outside of a component’s render to avoid
-// recreating the `Stripe` object on every render.
+import React, { useEffect, useState } from 'react';
 const stripePromise = loadStripe(
   'pk_test_51Ist3IFae7EgjcoUEx3n71QOXTzd8bureSwSdLqZcNehw6fauNz1SsD3yA7Yni53qnFto2pRsa4couX7arU8hGkn00HbCoyOfJ'
 );

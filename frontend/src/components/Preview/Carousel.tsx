@@ -2,10 +2,15 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { makeStyles } from '@material-ui/core/styles';
 import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
-// import 'react-responsive-carousel/lib/styles/carousel.css'; // requires a loader
 import { Button, Typography } from '@material-ui/core';
 import { purple } from '@material-ui/core/colors';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import { loadStripe } from '@stripe/stripe-js';
+import { Tiles } from '../../pages/Preview';
+
+const stripePromise = loadStripe(
+  'pk_test_51Ist3IFae7EgjcoUEx3n71QOXTzd8bureSwSdLqZcNehw6fauNz1SsD3yA7Yni53qnFto2pRsa4couX7arU8hGkn00HbCoyOfJ'
+);
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,28 +24,38 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export interface Tiles {
-  title: string;
-  img: string;
-}
-
-const resumeData: Array<Tiles> = [
-  {
-    title: 'Modern Template',
-    img: 'https://s3.resume.io/uploads/local_template_image/image/383/persistent-resource/santiago-resume-templates.jpg',
-  },
-  {
-    title: 'Minimalist Template',
-    img: 'https://s3.resume.io/uploads/local_template_image/image/511/persistent-resource/barcelona-resume-templates.jpg',
-  },
-  {
-    title: 'Stylish Template',
-    img: 'https://s3.resume.io/uploads/local_template_image/image/441/persistent-resource/sydney-resume-templates.jpg',
-  },
-];
-
-export default function TemplateCarousel() {
+export default function TemplateCarousel({
+  resumeData,
+}: {
+  resumeData: Array<Tiles>;
+}) {
   const classes = useStyles();
+  const handleClick = async (id: string) => {
+    const stripe = await stripePromise;
+    const response = await fetch('/payment', {
+      // Adding method type
+      method: 'POST',
+      // Adding body or contents to send
+      body: JSON.stringify({ id: id }),
+      // Adding headers to the request
+      headers: {
+        'Content-type': 'application/json',
+      },
+    });
+    const session = await response.json();
+    // When the customer clicks on the button, redirect them to Checkout.
+    if (stripe) {
+      const result: any = await stripe.redirectToCheckout({
+        sessionId: session.id,
+      });
+
+      if (result.error) {
+        // If `redirectToCheckout` fails due to a browser or network
+        // error, display the localized error message to your customer
+        // using `result.error.message`.
+      }
+    }
+  };
 
   return (
     <div className={classes.carouselRoot}>
@@ -71,14 +86,28 @@ export default function TemplateCarousel() {
             />
             <p>
               <div>
+                <div>
+                  {' '}
+                  <Typography
+                    variant='subtitle1'
+                    color='secondary'
+                    style={{ fontWeight: 600 }}
+                  >
+                    {' '}
+                    {tile.price}
+                  </Typography>
+                </div>
                 <Button
                   style={{ marginTop: '10px' }}
                   variant='contained'
                   color='primary'
                   startIcon={<ShoppingCartIcon></ShoppingCartIcon>}
-                  href='/payment'
+                  //   href='/payment'
+                  onClick={() => {
+                    handleClick(tile.id);
+                  }}
                 >
-                  Purchase
+                  Purchase now
                 </Button>
               </div>
             </p>
@@ -87,5 +116,9 @@ export default function TemplateCarousel() {
       </Carousel>
     </div>
   );
+}
+
+function body(arg0: string, arg1: { method: string }, body: any, arg3: string) {
+  throw new Error('Function not implemented.');
 }
 // put a bunch of 2 CV templates: Checkout button

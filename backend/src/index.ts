@@ -1,9 +1,23 @@
-import express from 'express';
+// import { json } from 'body-parser';
+import express, { json } from 'express';
 import http from 'http';
 import { router as paymentRouter } from './routes/payment';
 
 const app = express();
 
+app.use(
+  (
+    req: express.Request,
+    res: express.Response,
+    next: express.NextFunction
+  ): void => {
+    if (req.originalUrl === '/payment/webhook') {
+      next();
+    } else {
+      json()(req, res, next);
+    }
+  }
+);
 app.get('/', (_req, res) => {
   res.send('hello');
 });
