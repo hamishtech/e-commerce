@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "cd backend && npm install && npm run tsc",
     "start": "cd backend && node build/index.js",
-    "heroku-postbuild": "cd frontend && npm install && npm install --only=dev --no-shrinkwrap && npm run build && cd - && cd backend && npm install && npm run tsc"
+    "heroku-postbuild": "cd frontend && npm install && npm run build && cd - && cd backend && npm install && npm run tsc"
   },
   "repository": {
     "type": "git",
