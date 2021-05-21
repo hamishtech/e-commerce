@@ -1,18 +1,16 @@
-import { createMuiTheme, Grid, ThemeProvider } from '@material-ui/core';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core';
 import { purple } from '@material-ui/core/colors';
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Footer from './components/Layout/Footer';
 import NavBar from './components/Layout/Header';
-import Pricing from './pages/Pricing';
-import HomePageMain from './components/HomePage/PrimaryHomePage';
-import HomePageSecondary from './components/HomePage/SecondaryHomePage';
-import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import Homepage from './pages/Homepage';
-import WhyUs from './pages/WhyUs';
-import Preview from './pages/Preview';
 import Payment from './pages/Checkout';
-import Success from './pages/Success';
 import FailPayment from './pages/FailPayment';
+import Homepage from './pages/Homepage';
+import Preview from './pages/Preview';
+import Pricing from './pages/Pricing';
+import Success from './pages/Success';
+import WhyUs from './pages/WhyUs';
 
 const theme = createMuiTheme({
   breakpoints: {
@@ -42,7 +40,7 @@ function App() {
       <Router>
         <Switch>
           <Route exact path='/'>
-            <Homepage />
+            <Homepage/>
           </Route>
           <Route path='/pricing'>
             <Pricing />
@@ -55,14 +53,14 @@ function App() {
           </Route>
           <Route path='/success'>
             <Success />
+          </Route>{' '}
+          <Route path='/payment'>
+            <Payment />
+          </Route>
+          <Route path='/cancel'>
+            <FailPayment />
           </Route>
         </Switch>
-        <Route path='/payment'>
-          <Payment />
-        </Route>
-        <Route path='/cancel'>
-          <FailPayment />
-        </Route>
       </Router>
       <Footer />
     </ThemeProvider>

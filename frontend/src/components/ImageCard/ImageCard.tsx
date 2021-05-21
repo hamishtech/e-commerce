@@ -8,6 +8,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { purple } from '@material-ui/core/colors';
+import { truncateSync } from 'fs';
 
 interface Props {
   picture: React.ReactNode;
@@ -32,7 +33,7 @@ export default function MediaCard({ picture, title, description }: Props) {
 
   return (
     <Card elevation={1} className={classes.root}>
-      <CardActionArea>
+      <CardActionArea disabled={true}>
         <CardMedia className={classes.media}>{picture}</CardMedia>
         <CardContent>
           <Typography
@@ -56,17 +57,7 @@ export default function MediaCard({ picture, title, description }: Props) {
       <CardActions>
         <Button
           size='small'
-          color='primary'
-          style={{
-            fontFamily: 'Nunito',
-            fontWeight: 400,
-            color: purple[500],
-          }}
-        >
-          Share
-        </Button>
-        <Button
-          size='small'
+          href='/whyus'
           color='primary'
           style={{
             fontFamily: 'Nunito',

@@ -1,21 +1,18 @@
 import {
-  Button,
-  Container,
-  Grid,
-  Icon,
-  makeStyles,
-  SvgIcon,
-  Typography,
+    Button,
+    Container,
+    Grid,
+    Icon,
+    makeStyles,
+
+    Typography
 } from '@material-ui/core';
-import Footer from '../components/Layout/Footer';
 import React from 'react';
-import FeatureCard from '../components/WhyUs/Card';
-import StandOut from '../components/svg/Features/StandOut';
+import Customizable from '../components/svg/Features/Customizable';
 import MadeFor from '../components/svg/Features/MadeFor';
 import Simple from '../components/svg/Features/Simple';
-import Customizable from '../components/svg/Features/Customizable';
-import InsertDriveFileTwoToneIcon from '@material-ui/icons/InsertDriveFileTwoTone';
-import { IconButton } from '@material-ui/core';
+import StandOut from '../components/svg/Features/StandOut';
+import FeatureCard from '../components/WhyUs/Card';
 
 const useStyles = makeStyles({
   root: {
