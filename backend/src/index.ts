@@ -1,6 +1,7 @@
 // import { json } from 'body-parser';
 import express, { json } from 'express';
 import http from 'http';
+import path from 'path';
 import { router as paymentRouter } from './routes/payment';
 
 const app = express();
@@ -18,8 +19,12 @@ app.use(
     }
   }
 );
-app.get('/', (_req, res) => {
-  res.send('hello');
+
+app.use(express.static(path.join(__dirname, '..', '..', 'frontend', 'build')));
+app.get('*', function (_request, response) {
+  response.sendFile(
+    path.join(__dirname, '..', '..', 'frontend', 'build', 'index.html')
+  );
 });
 
 app.use('/payment', paymentRouter);
