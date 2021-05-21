@@ -10,22 +10,18 @@ const useStyles = makeStyles((theme) => ({
   root: {
     borderTop: `1px solid ${theme.palette.divider}`,
     paddingTop: '50px',
-    minHeight: '100vh',
     justifyContent: 'center',
     [theme.breakpoints.down('lg')]: {
       marginTop: '50px',
-      height: '80vh',
       marginBottom: '0px',
     },
     [theme.breakpoints.down('md')]: {
       marginTop: '50px',
-      height: '80vh',
       marginBottom: '200px',
     },
     [theme.breakpoints.down('xs')]: {
-      height: '100vh',
-      marginTop: '300px',
-      marginBottom: '200px',
+      marginTop: '350px',
+      marginBottom: '20px',
     },
   },
 }));
