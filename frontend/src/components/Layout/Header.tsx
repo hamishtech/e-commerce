@@ -49,15 +49,15 @@ const NavBar = () => {
           <Link underline='none' className={classes.toolbarTitle} href='/'>
             <Typography
               variant='h6'
-              color='inherit'
               noWrap
               style={{
                 fontSize: '1.6rem',
                 fontFamily: 'Nunito',
+                color: 'black',
                 fontWeight: 900,
               }}
             >
-              my<span className={classes.colorTitle}>Resume.</span>{' '}
+              my<span style={{ color: purple[500] }}>Resume.</span>{' '}
             </Typography>
           </Link>
           <nav>
