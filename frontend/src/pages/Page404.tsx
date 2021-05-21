@@ -10,7 +10,7 @@ const Page404 = () => {
         style={{ textAlign: 'center', marginTop: '100px' }}
         variant='h3'
       >
-        404:page not found
+        404 error: page not found
       </Typography>
     </Container>
   );
