@@ -1,11 +1,10 @@
 import {
-    Button,
-    Container,
-    Grid,
-    Icon,
-    makeStyles,
-
-    Typography
+  Button,
+  Container,
+  Grid,
+  Icon,
+  makeStyles,
+  Typography,
 } from '@material-ui/core';
 import React from 'react';
 import Customizable from '../components/svg/Features/Customizable';
@@ -22,7 +21,7 @@ const useStyles = makeStyles({
     minWidth: '100%',
   },
   title: { fontFamily: 'Nunito', fontWeight: 800 },
-  card: { marginTop: '50px' },
+  card: { marginTop: '50px', alignSelf: 'center', justifySelf: 'center' },
 });
 
 export interface cards {
@@ -63,7 +62,7 @@ const WhyUs = () => {
           <Typography variant='h3' className={classes.title}>
             Why use our resumes?
           </Typography>
-          <Grid container alignItems='center' spacing={2}>
+          <Grid container alignItems='center' spacing={2} justify='center'>
             {featureCards.map((card) => {
               return (
                 <Grid

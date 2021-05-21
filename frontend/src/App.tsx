@@ -7,6 +7,7 @@ import NavBar from './components/Layout/Header';
 import Payment from './pages/Checkout';
 import FailPayment from './pages/FailPayment';
 import Homepage from './pages/Homepage';
+import Page404 from './pages/Page404';
 import Preview from './pages/Preview';
 import Pricing from './pages/Pricing';
 import Success from './pages/Success';
@@ -36,11 +37,11 @@ const theme = createMuiTheme({
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <NavBar />
       <Router>
+        <NavBar />
         <Switch>
           <Route exact path='/'>
-            <Homepage/>
+            <Homepage />
           </Route>
           <Route path='/pricing'>
             <Pricing />
@@ -53,12 +54,12 @@ function App() {
           </Route>
           <Route path='/success'>
             <Success />
-          </Route>{' '}
-          <Route path='/payment'>
-            <Payment />
           </Route>
           <Route path='/cancel'>
             <FailPayment />
+          </Route>
+          <Route>
+            <Page404 />
           </Route>
         </Switch>
       </Router>

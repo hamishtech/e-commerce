@@ -1,9 +1,4 @@
-import {
-    Link,
-    makeStyles,
-    Toolbar,
-    Typography
-} from '@material-ui/core';
+import { Link, makeStyles, Toolbar, Typography } from '@material-ui/core';
 import AppBar from '@material-ui/core/AppBar';
 import { purple } from '@material-ui/core/colors';
 import React from 'react';
@@ -22,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     position: 'fixed',
   },
   toolbar: {
-    width: '100%',
+    width: '90%',
     height: '10px',
   },
   toolbarTitle: {
