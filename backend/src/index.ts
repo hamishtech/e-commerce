@@ -29,6 +29,6 @@ app.get('*', function (_request, response) {
 
 app.use('/payment', paymentRouter);
 
-http.createServer(app).listen(8080, () => {
+http.createServer(app).listen(process.env.PORT || 8080, () => {
   console.log('running app on 8080');
 });
