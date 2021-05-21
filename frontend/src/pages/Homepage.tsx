@@ -4,10 +4,10 @@ import SecondaryHomePage from '../components/HomePage/SecondaryHomePage';
 
 const Homepage = () => {
   return (
-    <div>
-      <PrimaryHomePage/>
-      <SecondaryHomePage/>
-    </div>
+    <React.Fragment>
+      <PrimaryHomePage />
+      <SecondaryHomePage />
+    </React.Fragment>
   );
 };
 

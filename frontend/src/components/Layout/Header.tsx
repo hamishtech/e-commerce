@@ -1,9 +1,8 @@
 import {
-  IconButton,
-  Link,
-  makeStyles,
-  Toolbar,
-  Typography,
+    Link,
+    makeStyles,
+    Toolbar,
+    Typography
 } from '@material-ui/core';
 import AppBar from '@material-ui/core/AppBar';
 import { purple } from '@material-ui/core/colors';
@@ -23,18 +22,19 @@ const useStyles = makeStyles((theme) => ({
     position: 'fixed',
   },
   toolbar: {
-    width: '75%',
+    width: '100%',
     height: '10px',
   },
   toolbarTitle: {
     flexGrow: 1,
     fontSize: '35px',
     fontWeight: 900,
+    textAlign: 'left',
   },
   link: {
     margin: theme.spacing(1, 1.5),
     fontWeight: 600,
-    fontSize: '17px',
+    fontSize: '13px',
   },
   icon: { fontSize: '70px' },
   colorTitle: { color: purple[600] },
@@ -51,21 +51,20 @@ const NavBar = () => {
         className={classes.appBar}
       >
         <Toolbar variant='dense' className={classes.toolbar}>
-          <IconButton className={classes.toolbarTitle} href='/'>
-            {' '}
+          <Link underline='none' className={classes.toolbarTitle} href='/'>
             <Typography
               variant='h6'
               color='inherit'
               noWrap
               style={{
-                fontSize: '2rem',
+                fontSize: '1.6rem',
                 fontFamily: 'Nunito',
                 fontWeight: 900,
               }}
             >
               my<span className={classes.colorTitle}>Resume.</span>{' '}
             </Typography>
-          </IconButton>
+          </Link>
           <nav>
             <Link
               variant='button'
@@ -78,18 +77,18 @@ const NavBar = () => {
             <Link
               variant='button'
               color='textPrimary'
-              href='/preview'
-              className={classes.link}
-            >
-              Preview
-            </Link>
-            <Link
-              variant='button'
-              color='textPrimary'
               href='/pricing'
               className={classes.link}
             >
               Pricing
+            </Link>
+            <Link
+              variant='button'
+              color='textPrimary'
+              href='/preview'
+              className={classes.link}
+            >
+              TEMPLATES
             </Link>
           </nav>
         </Toolbar>
