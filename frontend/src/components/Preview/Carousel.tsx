@@ -4,7 +4,6 @@ import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import { Button, Typography } from '@material-ui/core';
 import { purple } from '@material-ui/core/colors';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import { loadStripe } from '@stripe/stripe-js';
 import { Tiles } from '../../pages/Preview';
 
@@ -30,32 +29,6 @@ export default function TemplateCarousel({
   resumeData: Array<Tiles>;
 }) {
   const classes = useStyles();
-  const handleClick = async (id: string) => {
-    const stripe = await stripePromise;
-    const response = await fetch('/payment', {
-      // Adding method type
-      method: 'POST',
-      // Adding body or contents to send
-      body: JSON.stringify({ id: id }),
-      // Adding headers to the request
-      headers: {
-        'Content-type': 'application/json',
-      },
-    });
-    const session = await response.json();
-    // When the customer clicks on the button, redirect them to Checkout.
-    if (stripe) {
-      const result: any = await stripe.redirectToCheckout({
-        sessionId: session.id,
-      });
-
-      if (result.error) {
-        // If `redirectToCheckout` fails due to a browser or network
-        // error, display the localized error message to your customer
-        // using `result.error.message`.
-      }
-    }
-  };
 
   return (
     <div className={classes.carouselRoot}>
@@ -64,21 +37,12 @@ export default function TemplateCarousel({
         thumbWidth={200}
         showThumbs={false}
         swipeable={true}
+        showStatus={false}
         showIndicators={false}
         autoPlay={true}
       >
         {resumeData.map((tile) => (
           <div key={tile.img}>
-            <Typography
-              variant='h5'
-              style={{
-                marginBottom: '20px',
-                fontWeight: 800,
-                color: purple[500],
-              }}
-            >
-              {tile.title}
-            </Typography>
             <img
               src={tile.img}
               alt={tile.title}
@@ -86,7 +50,17 @@ export default function TemplateCarousel({
             />
             <p>
               <div>
-                <div>
+                <Typography
+                  variant='subtitle1'
+                  style={{
+                    marginBottom: '20px',
+                    fontWeight: 500,
+                    color: purple[500],
+                  }}
+                >
+                  {tile.title.split(' ')[0]}
+                </Typography>
+                {/* <div>
                   {' '}
                   <Typography
                     variant='subtitle1'
@@ -96,8 +70,8 @@ export default function TemplateCarousel({
                     {' '}
                     {tile.price}
                   </Typography>
-                </div>
-                <Button
+                </div> */}
+                {/* <Button
                   style={{ marginTop: '10px' }}
                   variant='contained'
                   color='primary'
@@ -108,7 +82,7 @@ export default function TemplateCarousel({
                   }}
                 >
                   Purchase now
-                </Button>
+                </Button> */}
               </div>
             </p>
           </div>

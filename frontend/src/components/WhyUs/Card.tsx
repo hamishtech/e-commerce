@@ -8,7 +8,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { PictureAsPdfSharp } from '@material-ui/icons';
-import { cards } from '../../pages/WhyUs';
+import { cards } from '../HomePage/WhyUs';
 
 const useStyles = makeStyles({
   root: {

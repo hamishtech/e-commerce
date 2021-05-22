@@ -4,14 +4,13 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Footer from './components/Layout/Footer';
 import NavBar from './components/Layout/Header';
-import Payment from './pages/Checkout';
 import FailPayment from './pages/FailPayment';
+import Features from './pages/Features';
 import Homepage from './pages/Homepage';
 import Page404 from './pages/Page404';
 import Preview from './pages/Preview';
-import Pricing from './pages/Pricing';
 import Success from './pages/Success';
-import WhyUs from './pages/WhyUs';
+import Templates from './pages/Templates';
 
 const theme = createMuiTheme({
   breakpoints: {
@@ -43,14 +42,14 @@ function App() {
           <Route exact path='/'>
             <Homepage />
           </Route>
-          <Route path='/pricing'>
+          {/* <Route path='/pricing'>
             <Pricing />
-          </Route>
+          </Route> */}
           <Route path='/whyus'>
-            <WhyUs />
+            <Features />
           </Route>
           <Route path='/preview'>
-            <Preview />
+            <Templates />
           </Route>
           <Route path='/success'>
             <Success />

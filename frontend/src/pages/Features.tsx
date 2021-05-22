@@ -1,14 +1,13 @@
 import { Grid, makeStyles, Typography } from '@material-ui/core';
 import { purple } from '@material-ui/core/colors';
 import React from 'react';
-import Footer from '../../components/Layout/Footer';
-import ImageCard from '../ImageCard/ImageCard';
-import SecondaryPic1 from '../svg/SecondaryPic1';
-import SecondaryPic2 from '../svg/SecondaryPic2';
+import Footer from '../components/Layout/Footer';
+import ImageCard from '../components/ImageCard/ImageCard';
+import SecondaryPic1 from '../components/svg/SecondaryPic1';
+import SecondaryPic2 from '../components/svg/SecondaryPic2';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    borderTop: `1px solid ${theme.palette.divider}`,
     paddingTop: '50px',
     justifyContent: 'center',
     [theme.breakpoints.down('lg')]: {
@@ -26,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const HomePageSecondary = () => {
+const Features = () => {
   const classes = useStyles();
 
   return (
@@ -35,12 +34,13 @@ const HomePageSecondary = () => {
         <Grid item xs={12}>
           {' '}
           <Typography
-            variant='h2'
+            variant='h3'
             style={{
               fontFamily: 'Nunito',
               color: purple[500],
               fontWeight: 900,
               textAlign: 'center',
+              marginTop: '20px',
             }}
           >
             Key Features
@@ -65,4 +65,4 @@ const HomePageSecondary = () => {
   );
 };
 
-export default HomePageSecondary;
+export default Features;

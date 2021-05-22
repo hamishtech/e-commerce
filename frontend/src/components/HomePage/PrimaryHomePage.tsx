@@ -1,16 +1,18 @@
 import {
-    Button,
-    Collapse,
-    Grid,
-    IconButton,
-    makeStyles,
-    Typography
+  Button,
+  Collapse,
+  Grid,
+  IconButton,
+  makeStyles,
+  Typography,
 } from '@material-ui/core';
 import { purple } from '@material-ui/core/colors';
 import { ExpandMore } from '@material-ui/icons';
+import VisibilityIcon from '@material-ui/icons/Visibility';
 import React, { useEffect, useState } from 'react';
 import { Link as AutoScroll } from 'react-scroll';
-import LandingSVG from '../svg/LandingSVG';
+import { resumeData } from '../../pages/Preview';
+import TemplateCarousel from '../Preview/Carousel';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -27,6 +29,17 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     gap: '100px',
     width: '100%',
+  },
+  carouselContainer: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    textAlign: 'center',
+    gap: '100px',
+    width: '100%',
+    [theme.breakpoints.down('xs')]: {
+      marginBottom: '500px',
+    },
   },
   pageTitle: { fontFamily: 'Nunito', fontWeight: 900, marginBottom: 20 },
   pageTitle2: { fontFamily: 'Nunito', fontWeight: 400, paddingTop: 20 },
@@ -52,17 +65,13 @@ const HomePageMain = () => {
 
   return (
     <div className={classes.root}>
-      <div style={{ height: '8rem' }}></div>
+      <div style={{ height: '5rem' }}></div>
       <Collapse
         in={checked}
         {...(checked ? { timeout: 1000 } : {})}
         collapsedHeight={100}
       >
         <Grid container spacing={0} className={classes.titleContainer}>
-          <Grid item md={3} xs={12}>
-            {' '}
-            <LandingSVG />
-          </Grid>
           <Grid item md={4} xs={12}>
             {' '}
             <Typography variant='h3' className={classes.pageTitle}>
@@ -73,22 +82,32 @@ const HomePageMain = () => {
               Only 2% of resumes make it past the first round. <br />
               <span className={classes.colorTitle}>Be in the top 2%</span>
             </Typography>
-            <Button
-              href='#'
-              size='small'
-              color='primary'
-              variant='contained'
-              className={classes.btn}
-            >
-              Get Started
-            </Button>
+            <div style={{ marginTop: '50px' }}>
+              {' '}
+              <AutoScroll to='part2' smooth={true}>
+                <IconButton>
+                  <ExpandMore className={classes.goDown}></ExpandMore>
+                </IconButton>
+              </AutoScroll>
+            </div>
           </Grid>
-          <Grid item xs={12}>
-            <AutoScroll to='secondary' smooth={true}>
-              <IconButton>
-                <ExpandMore className={classes.goDown}></ExpandMore>
-              </IconButton>
-            </AutoScroll>
+          <Grid item md={3} xs={12}>
+            <div className={classes.carouselContainer}>
+              <div>
+                {' '}
+                <TemplateCarousel resumeData={resumeData} />
+                <Button
+                  href='/preview'
+                  size='small'
+                  color='primary'
+                  variant='contained'
+                  className={classes.btn}
+                  startIcon={<VisibilityIcon />}
+                >
+                  View All Templates{' '}
+                </Button>
+              </div>
+            </div>
           </Grid>
         </Grid>
       </Collapse>

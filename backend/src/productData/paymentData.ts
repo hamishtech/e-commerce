@@ -24,4 +24,10 @@ export const itemData: Array<Item> = [
     id: '3',
     price: 1300,
   },
+  {
+    title: 'Clean Template',
+    img: 'https://s3.resume.io/uploads/local_template_image/image/488/persistent-resource/dublin-resume-templates.jpg',
+    id: '4',
+    price: 1300,
+  },
 ];

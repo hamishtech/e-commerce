@@ -28,7 +28,7 @@ router.post('/', async (req: any, res: any) => {
     ],
     mode: 'payment',
     success_url: `http://localhost:3000/success`,
-    cancel_url: `http://localhost:3000/cancel`,
+    cancel_url: `http://localhost:3000/success`,
     metadata: item ? { ITEM_ID: item.id } : null,
   });
   res.json({ id: session.id });

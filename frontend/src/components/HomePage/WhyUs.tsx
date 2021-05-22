@@ -7,11 +7,11 @@ import {
   Typography,
 } from '@material-ui/core';
 import React from 'react';
-import Customizable from '../components/svg/Features/Customizable';
-import MadeFor from '../components/svg/Features/MadeFor';
-import Simple from '../components/svg/Features/Simple';
-import StandOut from '../components/svg/Features/StandOut';
-import FeatureCard from '../components/WhyUs/Card';
+import Customizable from '../svg/Features/Customizable';
+import MadeFor from '../svg/Features/MadeFor';
+import Simple from '../svg/Features/Simple';
+import StandOut from '../svg/Features/StandOut';
+import FeatureCard from '../WhyUs/Card';
 
 const useStyles = makeStyles({
   root: {
@@ -57,7 +57,7 @@ const WhyUs = () => {
   const classes = useStyles();
   return (
     <>
-      <Container className={classes.root}>
+      <Container id='part2' className={classes.root}>
         <div>
           <Typography variant='h3' className={classes.title}>
             Why use our resumes?

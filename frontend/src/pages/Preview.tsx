@@ -23,7 +23,7 @@ export interface Tiles {
   price: string;
 }
 
-const resumeData: Array<Tiles> = [
+export const resumeData: Array<Tiles> = [
   {
     title: 'Modern Template',
     img: 'https://s3.resume.io/uploads/local_template_image/image/383/persistent-resource/santiago-resume-templates.jpg',
@@ -42,11 +42,16 @@ const resumeData: Array<Tiles> = [
     id: '3',
     price: '$13.00',
   },
+  {
+    title: 'Clean Template',
+    img: 'https://s3.resume.io/uploads/local_template_image/image/488/persistent-resource/dublin-resume-templates.jpg',
+    id: '4',
+    price: '$13.00',
+  },
 ];
 
 export default function Preview() {
   const classes = useStyles();
-
   return (
     <div>
       <CssBaseline />

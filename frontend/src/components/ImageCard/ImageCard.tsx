@@ -55,7 +55,7 @@ export default function MediaCard({ picture, title, description }: Props) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button
+        {/* <Button
           size='small'
           href='/whyus'
           color='primary'
@@ -66,7 +66,7 @@ export default function MediaCard({ picture, title, description }: Props) {
           }}
         >
           Learn More
-        </Button>
+        </Button> */}
       </CardActions>
     </Card>
   );
