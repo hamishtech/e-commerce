@@ -74,9 +74,7 @@ const NavBar = () => {
             </Typography>
           </Link>
           {mobileView ? (
-            <div style={{ marginLeft: '200px' }}>
-              <MenuAppBar />
-            </div>
+            <MenuAppBar />
           ) : (
             <nav>
               <Link

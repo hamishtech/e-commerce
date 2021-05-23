@@ -58,6 +58,7 @@ export default function MenuAppBar() {
           <MenuItem
             onClick={() => {
               history.push('/whyus');
+              setOpen(null);
             }}
           >
             Features
@@ -65,6 +66,7 @@ export default function MenuAppBar() {
           <MenuItem
             onClick={() => {
               history.push('/preview');
+              setOpen(null);
             }}
           >
             Templates
