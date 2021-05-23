@@ -42,7 +42,7 @@ export default function MenuAppBar() {
         <IconButton
           edge='start'
           className={classes.menuButton}
-          color='inherit'
+          color='primary'
           aria-label='menu'
           onClick={handleClick}
         >
