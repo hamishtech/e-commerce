@@ -2,7 +2,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { makeStyles } from '@material-ui/core/styles';
 import React from 'react';
 import 'react-responsive-carousel/lib/styles/carousel.css'; // requires a loader
-import TemplateCarousel from '../components/Preview/Carousel';
+import TemplateCarousel from '../components/HomePage/Carousel';
 
 const useStyles = makeStyles((theme) => ({
   root: {

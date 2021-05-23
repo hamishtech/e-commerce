@@ -49,41 +49,7 @@ export default function TemplateCarousel({
               style={{ maxWidth: '100%', maxHeight: '100%' }}
             />
             <p>
-              <div>
-                <Typography
-                  variant='subtitle1'
-                  style={{
-                    marginBottom: '20px',
-                    fontWeight: 500,
-                    color: purple[500],
-                  }}
-                >
-                  {tile.title.split(' ')[0]}
-                </Typography>
-                {/* <div>
-                  {' '}
-                  <Typography
-                    variant='subtitle1'
-                    color='secondary'
-                    style={{ fontWeight: 600 }}
-                  >
-                    {' '}
-                    {tile.price}
-                  </Typography>
-                </div> */}
-                {/* <Button
-                  style={{ marginTop: '10px' }}
-                  variant='contained'
-                  color='primary'
-                  startIcon={<ShoppingCartIcon></ShoppingCartIcon>}
-                  //   href='/payment'
-                  onClick={() => {
-                    handleClick(tile.id);
-                  }}
-                >
-                  Purchase now
-                </Button> */}
-              </div>
+              <div></div>
             </p>
           </div>
         ))}
@@ -95,4 +61,3 @@ export default function TemplateCarousel({
 function body(arg0: string, arg1: { method: string }, body: any, arg3: string) {
   throw new Error('Function not implemented.');
 }
-// put a bunch of 2 CV templates: Checkout button

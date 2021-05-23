@@ -42,9 +42,6 @@ function App() {
           <Route exact path='/'>
             <Homepage />
           </Route>
-          {/* <Route path='/pricing'>
-            <Pricing />
-          </Route> */}
           <Route path='/whyus'>
             <Features />
           </Route>

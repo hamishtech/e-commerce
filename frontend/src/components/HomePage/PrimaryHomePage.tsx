@@ -12,7 +12,7 @@ import VisibilityIcon from '@material-ui/icons/Visibility';
 import React, { useEffect, useState } from 'react';
 import { Link as AutoScroll } from 'react-scroll';
 import { resumeData } from '../../pages/Preview';
-import TemplateCarousel from '../Preview/Carousel';
+import TemplateCarousel from './Carousel';
 
 const useStyles = makeStyles((theme) => ({
   root: {

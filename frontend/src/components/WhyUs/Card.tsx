@@ -12,7 +12,7 @@ import { cards } from '../HomePage/WhyUs';
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 345,
+    width: 345,
   },
   media: {
     height: 140,

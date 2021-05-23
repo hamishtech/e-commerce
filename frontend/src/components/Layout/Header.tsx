@@ -1,7 +1,8 @@
 import { Link, makeStyles, Toolbar, Typography } from '@material-ui/core';
 import AppBar from '@material-ui/core/AppBar';
-import { purple } from '@material-ui/core/colors';
-import React from 'react';
+import { green, indigo, purple } from '@material-ui/core/colors';
+import React, { useEffect } from 'react';
+import MenuAppBar from './Menu';
 
 const useStyles = makeStyles((theme) => ({
   '@global': {
@@ -13,11 +14,11 @@ const useStyles = makeStyles((theme) => ({
   },
   appBar: {
     borderBottom: `1px solid ${theme.palette.divider}`,
-    background: '#fff',
+    backgroundColor: '#11cb5f',
     position: 'fixed',
   },
   toolbar: {
-    width: '90%',
+    width: '100%',
     height: '10px',
   },
   toolbarTitle: {
@@ -36,12 +37,24 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const NavBar = () => {
+  const [mobileView, setMobileView] = React.useState(false);
+
+  useEffect(() => {
+    const setResponsiveness = () => {
+      return window.innerWidth < 700
+        ? setMobileView(true)
+        : setMobileView(false);
+    };
+    setResponsiveness();
+    window.addEventListener('resize', () => setResponsiveness());
+  }, []);
+
   const classes = useStyles();
   return (
     <div>
       <AppBar
         position='sticky'
-        color='default'
+        color='primary'
         elevation={0}
         className={classes.appBar}
       >
@@ -60,32 +73,30 @@ const NavBar = () => {
               my<span style={{ color: purple[500] }}>Resume.</span>{' '}
             </Typography>
           </Link>
-          <nav>
-            <Link
-              variant='button'
-              color='textPrimary'
-              href='/whyus'
-              className={classes.link}
-            >
-              FEATURES{' '}
-            </Link>
-            <Link
-              variant='button'
-              color='textPrimary'
-              href='/pricing'
-              className={classes.link}
-            >
-              Pricing
-            </Link>
-            <Link
-              variant='button'
-              color='textPrimary'
-              href='/preview'
-              className={classes.link}
-            >
-              TEMPLATES
-            </Link>
-          </nav>
+          {mobileView ? (
+            <div style={{ marginLeft: '200px' }}>
+              <MenuAppBar />
+            </div>
+          ) : (
+            <nav>
+              <Link
+                variant='button'
+                color='textPrimary'
+                href='/whyus'
+                className={classes.link}
+              >
+                FEATURES{' '}
+              </Link>
+              <Link
+                variant='button'
+                color='textPrimary'
+                href='/preview'
+                className={classes.link}
+              >
+                TEMPLATES
+              </Link>
+            </nav>
+          )}
         </Toolbar>
       </AppBar>
     </div>

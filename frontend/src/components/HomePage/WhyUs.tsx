@@ -21,7 +21,16 @@ const useStyles = makeStyles({
     minWidth: '100%',
   },
   title: { fontFamily: 'Nunito', fontWeight: 800 },
-  card: { marginTop: '50px', alignSelf: 'center', justifySelf: 'center' },
+  card: {
+    display: 'flex',
+    width: '500px',
+    textAlign: 'center',
+    marginTop: '50px',
+    alignSelf: 'center',
+    justifySelf: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 });
 
 export interface cards {
@@ -62,7 +71,13 @@ const WhyUs = () => {
           <Typography variant='h3' className={classes.title}>
             Why use our resumes?
           </Typography>
-          <Grid container alignItems='center' spacing={2} justify='center'>
+          <Grid
+            container
+            alignItems='center'
+            spacing={2}
+            justify='center'
+            style={{ textAlign: 'center' }}
+          >
             {featureCards.map((card) => {
               return (
                 <Grid
