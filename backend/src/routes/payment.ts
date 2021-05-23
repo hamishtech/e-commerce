@@ -27,8 +27,8 @@ router.post('/', async (req: any, res: any) => {
       },
     ],
     mode: 'payment',
-    success_url: `/success`,
-    cancel_url: `/cancel`,
+    success_url: `https://hb-resumeshop.herokuapp.com/success`,
+    cancel_url: `https://hb-resumeshop.herokuapp.com/cancel`,
     metadata: item ? { ITEM_ID: item.id } : null,
   });
   res.json({ id: session.id });
